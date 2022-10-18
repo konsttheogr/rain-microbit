@@ -6,7 +6,6 @@ xs = [
     2,
     2
 ]
-let speed = 1
 basic.forever(function () {
     basic.clearScreen()
     led.plot(xs[0], 0)
@@ -18,7 +17,7 @@ basic.forever(function () {
     xs[3] = xs[2]
     xs[2] = xs[1]
     xs[1] = xs[0]
-    basic.pause(speed * 50)
+    basic.pause(50)
 })
 
 
@@ -35,7 +34,3 @@ if (xs[0] == 5) {
     }
 })
 
-input.onButtonPressed(Button.AB, function () {
-    speed+=1
-    if (speed==6) {speed=1}
-})
