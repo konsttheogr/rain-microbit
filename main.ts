@@ -1,25 +1,10 @@
-input.onButtonPressed(Button.AB, function () {
-	
-})
-input.onButtonPressed(Button.A, function () {
-    xs[0] -= 1
-if (xs[0] == -1) {
-        xs[0] = 0
-    }
-})
-input.onButtonPressed(Button.B, function () {
-    xs[0] += 1
-if (xs[0] == 5) {
-        xs[0] = 4
-    }
-})
 let xs: number[] = []
 xs = [
-2,
-2,
-2,
-2,
-2
+    2,
+    2,
+    2,
+    2,
+    2
 ]
 let speed = 1
 basic.forever(function () {
@@ -34,4 +19,23 @@ basic.forever(function () {
     xs[2] = xs[1]
     xs[1] = xs[0]
     basic.pause(speed * 50)
+})
+
+
+input.onButtonPressed(Button.A, function () {
+    xs[0] -= 1
+if (xs[0] == -1) {
+        xs[0] = 0
+    }
+})
+input.onButtonPressed(Button.B, function () {
+    xs[0] += 1
+if (xs[0] == 5) {
+        xs[0] = 4
+    }
+})
+
+input.onButtonPressed(Button.AB, function () {
+    speed+=1
+    if (speed==6) {speed=1}
 })
